@@ -11,20 +11,7 @@ class EmailAddressParser
   end
 
   def parse
-  if  email_addresses.include?(",")
-  email_address_array=  @email_addresses.split(", ")
-else
-  email_address_array= @email_addresses.split(" ")
-end
-if email_address_array.length > 1
-  email_address_array.map { |email_address|
-    if email_address.include?(" ")
-    email_address.split(" ")
-  else email_address.split(", ")
-  end
-    }
-  end
-  email_address_array
+email_addresses.split(/, | /).flatten.uniq
 end
 =======
   def initialize(email_addresses,csv=nil)
