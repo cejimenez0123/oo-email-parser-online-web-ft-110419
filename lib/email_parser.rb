@@ -13,3 +13,4 @@ class EmailAddressParser
   def parse
 email_addresses.split(/, | /).flatten.uniq
 end
+end
